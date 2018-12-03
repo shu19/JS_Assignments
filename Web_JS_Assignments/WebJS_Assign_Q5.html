@@ -1,0 +1,27 @@
+<!--  Create an HTML page with a button on it, when the button is clicked, 
+    it should display the text "Hello World" on the page.
+NOTE: The buttton might have gone after text appears.
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <script>
+        function f1(){
+            document.getElementById("text").innerHTML="Hello World";
+            document.getElementById("btn").style.display='none';
+        }
+    </script>
+</head>
+<body>
+        <button id="btn" onclick="f1()">CLICK HERE</button>
+
+        <h1 id="text"></h1>
+</body>
+</html>
