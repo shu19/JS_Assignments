@@ -1,0 +1,76 @@
+<!-- 
+Write a script which uses a prompt box to get an input. 
+Validate that the input is an Integer between 1 and 30, 
+and then print to the page asterisks (*) to represent the number. 
+Your script must run until you have collected 3 valid inputs as well as 
+generate 3 outputs (one output on one line).
+Example:
+Input: 4
+Input: 6
+Input: 12
+****
+******
+************
+
+
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Assignment 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+        function myFunction() {
+
+            var number1 = prompt("Please enter 1st number");
+            while (!isNumber(number1)) {
+                number1 = prompt("Please enter 1st number");
+            }
+
+            var number2 = prompt("Please enter 2nd number");
+            while (!isNumber(number2)) {
+                number2 = prompt("Please enter 2nd number");
+            }
+
+            var number3 = prompt("Please enter 3rd number");
+            while (!isNumber(number3)) {
+                number3 = prompt("Please enter 3rd number");
+            }
+
+            document.getElementById("1").innerHTML = "*".repeat(number1);
+            document.getElementById("2").innerHTML = "*".repeat(number2);
+            document.getElementById("3").innerHTML = "*".repeat(number3);
+
+        }
+
+        function isNumber(x) {
+            // var val="^[a-zA-Z0-9]{,30}";
+            var val = /^[0-9]/i;
+            if (val.test(x)) {
+                if (x > 0 && x <= 30) {
+                    return true;
+                } else {
+                    alert('Enter number less than 30');
+                    return false;
+                }
+            } else {
+                alert("Enter Valid number");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="myFunction()">Hi</button>
+    <h1 id="1"></h1>
+    <h1 id="2"></h1>
+    <h1 id="3"></h1>
+
+</body>
+
+</html>

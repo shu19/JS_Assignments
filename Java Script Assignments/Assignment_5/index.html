@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pizza</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <form name="frm" onsubmit="return IsEmpty()">
+        <div class="name">Name :
+            <input type="text" id="name" placeholder="Enter Name">
+        </div>
+
+        <div class="email">Email :
+            <input type="text" id="email" placeholder="Enter Email">
+        </div>
+
+        <div class="Toppings">
+            <h4>Toppings :</h4>
+
+            Extra cheese
+            <input type="checkbox" value="Extra cheese"> Pepperoni
+            <input type="checkbox" value="Pepperoni"> Olives
+            <input type="checkbox" value="Olives"> Pepper
+            <input type="checkbox" value="Pepper"> Bacon
+            <input type="checkbox" value="Bacon"> Tomatoes
+            <input type="checkbox" value="Tomatoes"> Mushrooms
+            <input type="checkbox" value="Mushrooms">
+        </div>
+
+        <div>
+
+            <b>How do you want to get your pizza! </b>
+
+            Delivery
+            <input type="radio" name="delivery" id="delivery"> Pickup
+            <input type="radio" name="delivery" id="pickup">
+
+        </div>
+
+        <div>
+            <b>Tip?</b>
+
+            <select name="" id="">
+
+                <option value="volvo">15%</option>
+                <option value="volvo">20%</option>
+
+                <option value="volvo">25%</option>
+
+
+            </select>
+            <hr>
+
+        </div>
+
+        <div class="Address">
+
+            <p>
+                <b style="margin: 0px">Address </b>
+            </p>
+            <textarea>
+
+            </textarea>
+            <br>
+        </div>
+        <div class="ActionButtons">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+            <input type="button" onclick="tbl(Summary)" value="Show Summary">
+
+        </div>
+
+        <table id="Summary">
+            <tr>
+                <td>Name</td>
+                <td id="tName"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td id="tEmail"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td id="tAddress"></td>
+            </tr>
+            <tr>
+                <td>Toppings</td>
+                <td id="tToppings"></td>
+            </tr>
+            <tr>
+                <td>Delivery ?</td>
+                <td id="tDelivery"></td>
+            </tr>
+            <tr>
+                <td>Tip Amount</td>
+                <td id="tTip"></td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td id="tTotal"></td>
+            </tr>
+
+        </table>
+
+
+    </form>
+</body>
+
+</html>

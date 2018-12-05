@@ -31,18 +31,17 @@ results to the user
         }
 
         function validateForm() {
-    var x = document.forms["temp_converter"]["text_box"].value;
-    if (x == "") {
-        alert("Temperature must be filled out");
-        return false;
-    }else if((/\D/.test(x))){
-        alert("Temperature must be number only");
-        return false;
-    }else{
-        return true;
-    }
-    
-    }
+            var x = document.forms["temp_converter"]["text_box"].value;
+            if (x == "") {
+                alert("Temperature must be filled out");
+                return false;
+            }else if((/\D/.test(x))){
+                alert("Temperature must be number only");
+                return false;
+            }
+            
+            
+        }
 
     </script>
 </head>
