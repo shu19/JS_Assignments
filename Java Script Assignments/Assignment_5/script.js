@@ -21,7 +21,7 @@ function isNumber(x) {
 }
 
 function IsEmpty() {
-    if (document.forms['frm'].question.value === "") {
+    if ( document.forms['frm']['name'].value === "") {
         alert("empty");
         return false;
     }
@@ -56,18 +56,85 @@ function tbl() {
         delivery = false;
     }
 
-    if (document.getElementById("Mushrooms").checked) {
+
+    var Toppings =[];
+
+    if (document.getElementById("ExtraCheese").checked) {
+        Toppings .push("Extra Cheese");
+    }
+    
+    if (document.getElementById("Pepperoni").checked) {
+        Toppings .push("Pepperoni");
 
     }
+    
+    if (document.getElementById("Olives").checked) {
+        Toppings .push("Olives");
 
+    }
+    
+    if (document.getElementById("Pepper").checked) {
+        Toppings .push("Pepper");
+
+    }
+    
+    if (document.getElementById("Bacon").checked) {
+        Toppings .push("Bacon");
+
+    }
+    
+    if (document.getElementById("Tomatoes").checked) {
+        Toppings .push("Tomatoes");
+
+    }
+    
+    if (document.getElementById("Mushrooms").checked) {
+        Toppings .push("Mushrooms");
+
+    }
+    
+    console.log(Toppings);
+
+    for(i=0;i<Toppings.length;i++){
+        insertRow(i,Toppings[i]);
+    }
 
 
     document.getElementById("tName").innerHTML = document.getElementById("name").value;
     document.getElementById("tEmail").innerHTML = document.getElementById("email").value;
     document.getElementById("tAddress").innerHTML = document.getElementById("AddressText").value;
+    document.getElementById("tDelivery").innerHTML = delivery;
+    document.getElementById("tTip").innerHTML = document.getElementById("tip").value+" %";
 
+
+    //  Total Price based on this formula: 
+    //(base price + 1.5 * #of toppings + delivery fee)*1.0+tip. 
+    //Where: base price= 10 and delivery is 5. 
+    //For example, if 3 toppings are selected, delivery is NOT checked and 20% tip is selected, 
+    //total is (10 + 1.5 * 3 + 0 ) * 1.2 = $17.4
+
+    var basePrice=10;
+    var deliveryCharge=0;
+    if(delivery){
+        deliveryCharge=5;
+    }
+    var tipPercent=document.getElementById("tip").value;
+    var total=(basePrice + (1.5*Toppings.length) + deliveryCharge)*(1.0 + tipPercent/100);
+    document.getElementById("tTotal").innerHTML =total;
+    
 }
 
+function insertRow(i,Toppings){
+    var table = document.getElementById("Summary");
+    var nameRow = table.insertRow(i+4);
+
+    var nameCell1 = nameRow.insertCell(0);
+    nameCell1.innerHTML = "Toppings "+ ++i;
+
+    var nameCell2 = nameRow.insertCell(1);
+    nameCell2.innerHTML = Toppings;
+
+}
 
 function createTable() {
     var table = document.getElementById("Summary");
@@ -79,6 +146,7 @@ function createTable() {
     var nameCell2 = nameRow.insertCell(1);
     nameCell2.innerHTML = "Shubham";
 
+
     var emailRow = table.insertRow(1);
     var nameCell1 = nameRow.insertCell(0);
     nameCell1.innerHTML = "Name";
@@ -86,3 +154,17 @@ function createTable() {
 
 }
 
+function checkform()
+    {
+        var f = document.forms["frm"].elements;
+        var cansubmit = true;
+
+        for (var i = 0; i < f.length; i++) {
+            if (f[i].value.length == 0) cansubmit = false;
+        }
+
+        if (cansubmit) {
+            // document.getElementById('submitbutton').disabled = false;
+            document.getElementById('submitbutton').disabled = !cansubmit;
+        }
+    }

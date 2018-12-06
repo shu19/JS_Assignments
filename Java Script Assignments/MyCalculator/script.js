@@ -53,13 +53,15 @@ function calculator() {
     }
 
 }
-
+/**
+ * mean() function is used to find mean
+ */
 function mean() {
     var sum = 0;
     var count = 0;
     var number = prompt("Enter number");
     while (!isNumber(number)) {
-        number = prompt("Enter exponent");
+        number = prompt("Enter number");
     }
 
     while (number != "***") {
@@ -68,7 +70,7 @@ function mean() {
             sum += parseInt(number);
             number = prompt("Enter number");
             while (!isNumber(number)) {
-                number = prompt("Enter exponent");
+                number = prompt("Enter number");
             }
         
         }

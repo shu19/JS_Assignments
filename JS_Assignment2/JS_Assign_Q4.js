@@ -72,18 +72,8 @@
     }
   }
 
-  
-//   function withdraw(amount){
-
-//     if(amount<savings.accountBalance){
-//         savings.accountBalance-=amount;
-//         console.log(savings.accountBalance);
-//     }
-    
-//   }
-
  savings.withdraw(600);
  savings.getCurrentBalance();
  
- current.withdraw(61000);
+ current.withdraw(15000);
  current.getCurrentBalance();

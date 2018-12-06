@@ -11,20 +11,20 @@
 </head>
 
 <body>
-    <form name="frm" onsubmit="return IsEmpty()">
+    <form name="frm" id="frm" onsubmit="return IsEmpty()">
         <div class="name">Name :
-            <input type="text" id="name" placeholder="Enter Name">
+            <input type="text" id="name" onKeyup="checkform()" placeholder="Enter Name" required>
         </div>
 
         <div class="email">Email :
-            <input type="text" id="email" placeholder="Enter Email">
+            <input type="text" id="email" onKeyup="checkform()" placeholder="Enter Email" >
         </div>
 
         <div class="Toppings">
             <h4>Toppings :</h4>
 
             Extra cheese
-            <input type="checkbox" id="cheese" value="Extra cheese"> Pepperoni
+            <input type="checkbox" id="ExtraCheese" value="Extra cheese"> Pepperoni
             <input type="checkbox" id="Pepperoni" value="Pepperoni"> Olives
             <input type="checkbox" id="Olives" value="Olives"> Pepper
             <input type="checkbox" id="Pepper" value="Pepper"> Bacon
@@ -46,7 +46,7 @@
         <div>
             <b>Tip ?</b>
 
-            <select name="" id="">
+            <select name="" id="tip">
 
                 <option value="15">15%</option>
                 <option value="20">20%</option>
@@ -63,15 +63,15 @@
             <p>
                 <b style="margin: 0px">Address </b>
             </p>
-            <textarea id="AddressText">
+            <textarea id="AddressText" required>
 
             </textarea>
             <br>
         </div>
         <div class="ActionButtons">
-            <input type="submit" value="Submit">
+            <input id="submitbutton" type="submit" value="Submit">
             <input type="reset" value="Reset">
-            <input type="button" onclick="tbl(Summary)" value="Show Summary">
+            <input type="button" onclick="tbl()" value="Show Summary">
 
         </div>
 
